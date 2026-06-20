@@ -17,6 +17,7 @@ export default function KalkuloPage() {
   const [hasMoney, setHasMoney] = useState(true);
   const [hasGold, setHasGold] = useState(false);
   const [hasSilver, setHasSilver] = useState(false);
+  const [hasCrypto, setHasCrypto] = useState(false);
 
   const [nisab, setNisab] = useState("");
   const [cash, setCash] = useState("");
@@ -36,6 +37,15 @@ const [jewelryRule, setJewelryRule] = useState("include");
 
   const [silverGrams, setSilverGrams] = useState("");
   const [silverPrice, setSilverPrice] = useState("");
+
+  // Crypto
+  const [btcAmount, setBtcAmount] = useState("");
+  const [btcPrice, setBtcPrice] = useState("");
+  const [ethAmount, setEthAmount] = useState("");
+  const [ethPrice, setEthPrice] = useState("");
+  const [usdtAmount, setUsdtAmount] = useState("");
+  const [usdtPrice, setUsdtPrice] = useState("1");
+  const [otherCryptoValue, setOtherCryptoValue] = useState("");
 
   const moneyTotal = hasMoney
     ? toNumber(cash) +
@@ -58,7 +68,13 @@ const [jewelryRule, setJewelryRule] = useState("include");
     ? toNumber(silverGrams) * toNumber(silverPrice)
     : 0;
 
-  const totalAssets = moneyTotal + goldValue + silverValue;
+  const btcValue = hasCrypto ? toNumber(btcAmount) * toNumber(btcPrice) : 0;
+  const ethValue = hasCrypto ? toNumber(ethAmount) * toNumber(ethPrice) : 0;
+  const usdtValue = hasCrypto ? toNumber(usdtAmount) * toNumber(usdtPrice) : 0;
+  const otherCryptoTotal = hasCrypto ? toNumber(otherCryptoValue) : 0;
+  const cryptoValue = btcValue + ethValue + usdtValue + otherCryptoTotal;
+
+  const totalAssets = moneyTotal + goldValue + silverValue + cryptoValue;
   const netAssets = Math.max(totalAssets - toNumber(debts), 0);
 
   const nisabValue = toNumber(nisab);
@@ -161,6 +177,16 @@ const [jewelryRule, setJewelryRule] = useState("include");
                     className="h-5 w-5 accent-emerald-700"
                   />
                   <span className="font-semibold">Argjend</span>
+                </label>
+
+                <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-emerald-100 p-4">
+                  <input
+                    type="checkbox"
+                    checked={hasCrypto}
+                    onChange={(event) => setHasCrypto(event.target.checked)}
+                    className="h-5 w-5 accent-emerald-700"
+                  />
+                  <span className="font-semibold">Kripto</span>
                 </label>
               </div>
             </section>
@@ -372,6 +398,105 @@ const [jewelryRule, setJewelryRule] = useState("include");
               </section>
             )}
 
+            {hasCrypto && (
+              <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-emerald-100">
+                <h2 className="text-xl font-bold">Kripto</h2>
+
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  <label className="text-sm font-semibold text-slate-700">
+                    BTC sasi
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.00000001"
+                      value={btcAmount}
+                      onChange={(e) => setBtcAmount(e.target.value)}
+                      placeholder="0.00"
+                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3"
+                    />
+                  </label>
+
+                  <label className="text-sm font-semibold text-slate-700">
+                    Çmimi manual për 1 BTC në {currency}
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      value={btcPrice}
+                      onChange={(e) => setBtcPrice(e.target.value)}
+                      placeholder="Shembull: 30000"
+                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3"
+                    />
+                  </label>
+
+                  <label className="text-sm font-semibold text-slate-700">
+                    ETH sasi
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.00000001"
+                      value={ethAmount}
+                      onChange={(e) => setEthAmount(e.target.value)}
+                      placeholder="0.00"
+                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3"
+                    />
+                  </label>
+
+                  <label className="text-sm font-semibold text-slate-700">
+                    Çmimi manual për 1 ETH në {currency}
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      value={ethPrice}
+                      onChange={(e) => setEthPrice(e.target.value)}
+                      placeholder="Shembull: 2000"
+                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3"
+                    />
+                  </label>
+
+                  <label className="text-sm font-semibold text-slate-700">
+                    USDT sasi
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      value={usdtAmount}
+                      onChange={(e) => setUsdtAmount(e.target.value)}
+                      placeholder="0.00"
+                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3"
+                    />
+                  </label>
+
+                  <label className="text-sm font-semibold text-slate-700">
+                    Çmimi për 1 USDT në {currency}
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      value={usdtPrice}
+                      onChange={(e) => setUsdtPrice(e.target.value)}
+                      placeholder="1"
+                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3"
+                    />
+                  </label>
+
+                  <label className="text-sm font-semibold text-slate-700 sm:col-span-2">
+                    Tjetër (vlerë totale manuale)
+                    <input
+                      type="number"
+                      min="0"
+                      step="0.01"
+                      value={otherCryptoValue}
+                      onChange={(e) => setOtherCryptoValue(e.target.value)}
+                      placeholder="Vlera totale"
+                      className="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3"
+                    />
+                  </label>
+                </div>
+              </section>
+            )}
+
             <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-emerald-100">
               <h2 className="text-xl font-bold">6. Detyrime të zbritshme</h2>
 
@@ -414,6 +539,11 @@ const [jewelryRule, setJewelryRule] = useState("include");
               <div className="flex justify-between gap-4">
                 <span className="text-emerald-100">Vlera e argjendit</span>
                 <strong>{money(silverValue, currency)}</strong>
+              </div>
+
+              <div className="flex justify-between gap-4">
+                <span className="text-emerald-100">Vlera e kriptove</span>
+                <strong>{money(cryptoValue, currency)}</strong>
               </div>
 
               <div className="flex justify-between gap-4">
