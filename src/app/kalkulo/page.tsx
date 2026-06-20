@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 const toNumber = (value: string) => {
@@ -67,12 +68,12 @@ const [jewelryRule, setJewelryRule] = useState("include");
   return (
     <main className="min-h-screen bg-[#f6faf7] px-5 py-8 text-slate-900 md:py-12">
       <div className="mx-auto max-w-5xl">
-        <a
+        <Link
           href="/"
           className="text-sm font-semibold text-emerald-800 hover:underline"
         >
           ← Kthehu në ballinë
-        </a>
+        </Link>
 
         <div className="mt-6">
           <p className="text-sm font-semibold text-emerald-700">
