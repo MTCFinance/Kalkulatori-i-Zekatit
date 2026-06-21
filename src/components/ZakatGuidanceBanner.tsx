@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import Link from "next/link";
 type Slide = {
   kind: "Ajet" | "Hadith";
   title: string;
@@ -120,12 +120,12 @@ export default function ZakatGuidanceBanner() {
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <a
-            href="/#udhezime-zekati"
-            className="rounded-xl bg-white px-4 py-2.5 text-sm font-bold text-emerald-800 transition hover:bg-emerald-50"
-          >
-            Shih udhëzimet
-          </a>
+        <Link
+  href="/#udhezime-zekati"
+  className="rounded-xl bg-white px-4 py-2.5 text-sm font-bold text-emerald-800 transition hover:bg-emerald-50"
+>
+  Shih udhëzimet
+</Link>
 
           <button
             type="button"
