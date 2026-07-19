@@ -1,4 +1,4 @@
-export type GuidanceKind = "Ajet" | "Hadith";
+﻿export type GuidanceKind = "Ajet" | "Hadith";
 export const appLocales = [
   "sq",
   "en",
@@ -68,7 +68,7 @@ export const guidanceSlides: GuidanceSlide[] = [
     kind: "Ajet",
     title: "Zekati është pjesë e adhurimit",
     arabicText:
-      "وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱرْكَعُوا۟ مَعَ ٱلرَّٰكِعِينَ",
+      "وَأَقِيمُوا۟ ٱلصَّلَوٰةَ وَءَاتُوا۟ ٱلزَّكَوٰةَ وَٱرْكَعُوا۟ مَعَ ٱلرَّٰكِعِينَ",
     translations: {
       sq: "Përkthim kuptimor: Kryeni namazin, jepeni zekatin dhe përuluni me ata që përulen.",
       en: "Establish prayer, give zakah, and bow with those who bow.",
@@ -82,7 +82,7 @@ export const guidanceSlides: GuidanceSlide[] = [
     kind: "Ajet",
     title: "Zekati pastron pasurinë",
     arabicText:
-      "خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةًۭ تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا وَصَلِّ عَلَيْهِمْ ۖ إِنَّ صَلَوٰتَكَ سَكَنٌۭ لَّهُمْ ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
+      "خُذْ مِنْ أَمْوَٰلِهِمْ صَدَقَةًۭ تُطَهِّرُهُمْ وَتُزَكِّيهِم بِهَا وَصَلِّ عَلَيْهِمْ ۖ إِنَّ صَلَوٰتَكَ سَكَنٌۭ لَّهُمْ ۗ وَٱللَّهُ سَمِيعٌ عَلِيمٌ",
     translations: {
       sq: "Përkthim kuptimor: Merr prej pasurisë së tyre sadaka, me të cilën i pastron dhe i begaton.",
       en: "Take from their wealth charity by which you purify and bless them.",
@@ -135,19 +135,25 @@ export const guidanceTopics: GuidanceTopic[] = [
     evidences: [
       {
         kind: "Ajet",
-        text: "Përkthim kuptimor: Kryeni namazin dhe jepeni zekatin.",
+        translations: {
+          sq: "Përkthim kuptimor: Kryeni namazin dhe jepeni zekatin.",
+        },
         reference: "Kur’an, El-Bekare 2:43",
         sourceUrl: "https://quran.com/en/al-baqarah/43",
       },
       {
         kind: "Ajet",
-        text: "Përkthim kuptimor: Merr prej pasurisë së tyre sadaka, me të cilën i pastron dhe i begaton.",
+        translations: {
+          sq: "Përkthim kuptimor: Merr prej pasurisë së tyre sadaka, me të cilën i pastron dhe i begaton.",
+        },
         reference: "Kur’an, Et-Teube 9:103",
         sourceUrl: "https://quran.com/en/at-tawbah/103",
       },
       {
         kind: "Hadith",
-        text: "Përkthim kuptimor: Islami është ndërtuar mbi pesë shtylla, ndër to edhe zekati.",
+        translations: {
+          sq: "Përkthim kuptimor: Islami është ndërtuar mbi pesë shtylla, ndër to edhe zekati.",
+        },
         reference: "Sahih Buhari, 8",
         sourceUrl: "https://sunnah.com/bukhari:8",
       },
@@ -155,10 +161,8 @@ export const guidanceTopics: GuidanceTopic[] = [
     scholars: [
       {
         scholar: "Ibn Kajimi",
-        arabic:
-          "أوجب الشارع الزكاة مواساةً للفقراء، وطهرةً للمال، وعبوديةً للرب.",
         translationSq:
-          "Ligjvënësi e bëri zekatin mbështetje për të varfrit, pastrim të pasurisë dhe adhurim ndaj Zotit.",
+          "Burimi i citatit është në verifikim.",
         reference: "I'lam al-Muwaqqi'in, 3/333",
         scope: "Urtësia dhe qëllimi i zekatit.",
       },
@@ -177,14 +181,16 @@ export const guidanceTopics: GuidanceTopic[] = [
           "Pasuria të arrijë nisabin e zgjedhur sipas arit ose argjendit.",
           "Për para, tregti, ari dhe disa pasuri të tjera zakonisht merret parasysh kalimi i një viti hënor.",
           "Për bereqetet e tokës, llogaritja lidhet me korrjen; për bagëtinë vlejnë kushte të veçanta.",
-          "Borxhet, bizhuteria personale dhe llojet moderne të pasurisë duhet të trajtohen sipas metodës së zgjedhur dhe këshillës fetare.",
+          "Borxhet, stolitë personale dhe llojet moderne të pasurisë duhet të trajtohen sipas metodës së zgjedhur dhe këshillës fetare.",
         ],
       },
     ],
     evidences: [
       {
         kind: "Hadith",
-        text: "Përkthim kuptimor: Allahu e ka bërë zekatin obligim në pasurinë e tyre.",
+        translations: {
+          sq: "Përkthim kuptimor: Allahu e ka bërë zekatin obligim në pasurinë e tyre.",
+        },
         reference: "Sahih Buhari, 1395",
         sourceUrl: "https://sunnah.com/bukhari:1395",
       },
@@ -225,13 +231,17 @@ export const guidanceTopics: GuidanceTopic[] = [
     evidences: [
       {
         kind: "Ajet",
-        text: "Përkthim kuptimor: Zekati është për të varfrit, nevojtarët dhe kategoritë e tjera të përcaktuara.",
+        translations: {
+          sq: "Përkthim kuptimor: Zekati është për të varfrit, nevojtarët dhe kategoritë e tjera të përcaktuara.",
+        },
         reference: "Kur’an, Et-Teube 9:60",
         sourceUrl: "https://quran.com/en/at-tawbah/60",
       },
       {
         kind: "Hadith",
-        text: "Përkthim kuptimor: Merret nga të pasurit e tyre dhe u jepet të varfërve të tyre.",
+        translations: {
+          sq: "Përkthim kuptimor: Merret nga të pasurit e tyre dhe u jepet të varfërve të tyre.",
+        },
         reference: "Sahih Buhari, 1395",
         sourceUrl: "https://sunnah.com/bukhari:1395",
       },
@@ -239,10 +249,8 @@ export const guidanceTopics: GuidanceTopic[] = [
     scholars: [
       {
         scholar: "Imam Shafiu",
-        arabic:
-          "ولا وقت فيما يعطى الفقير إلا ما يخرجه من حد الفقر إلى الغنى.",
         translationSq:
-          "Nuk ka kufi të ngurtë në atë që i jepet të varfrit, përveç asaj që e nxjerr nga varfëria drejt mjaftueshmërisë.",
+          "Burimi i citatit është në verifikim.",
         reference: "El-Umm, 8/256",
         scope: "Qëllimi i ndihmës së përfituesit të zekatit.",
       },
@@ -268,7 +276,9 @@ export const guidanceTopics: GuidanceTopic[] = [
     evidences: [
       {
         kind: "Hadith",
-        text: "Rasti i Zejnebes tregon se çështjet e dhënies së zekatit brenda familjes duhen trajtuar me kujdes dhe sipas rrethanave.",
+        translations: {
+          sq: "Rasti i Zejnebes tregon se çështjet e dhënies së zekatit brenda familjes duhen trajtuar me kujdes dhe sipas rrethanave.",
+        },
         reference: "Sahih Buhari, 1462",
         sourceUrl: "https://sunnah.com/bukhari:1462",
       },
@@ -276,9 +286,8 @@ export const guidanceTopics: GuidanceTopic[] = [
     scholars: [
       {
         scholar: "Imam Ahmed ibn Hanbel",
-        arabic: "لا يجزيه ذلك",
         translationSq:
-          "Nuk mjafton që një borxh ndaj një të varfri thjesht të fshihet dhe të llogaritet si zekat.",
+          "Burimi i citatit është në verifikim.",
         reference: "El-Mugni, 2/487, duke transmetuar një çështje nga Imam Ahmedi",
         scope: "Rasti i fshirjes së borxhit ndaj një përfituesi të mundshëm.",
       },
@@ -294,50 +303,41 @@ export const guidanceTopics: GuidanceTopic[] = [
     scholars: [
       {
         scholar: "Ibn Kajimi",
-        arabic:
-          "أوجب الشارع الزكاة مواساةً للفقراء، وطهرةً للمال، وعبوديةً للرب.",
         translationSq:
-          "Zekati është mbështetje për të varfrit, pastrim i pasurisë dhe adhurim ndaj Allahut.",
+          "Burimi i citatit është në verifikim.",
         reference: "I'lam al-Muwaqqi'in, 3/333",
         scope: "Urtësia e përgjithshme e zekatit.",
       },
       {
         scholar: "Ibn Tejmije",
-        arabic:
-          "الأئمة الأربعة وسائر الأمة إلا من شذ متفقون على وجوبها في عرض التجارة.",
         translationSq:
-          "Katër imamët dhe shumica e dijetarëve pranojnë obligimin e zekatit në mallrat e tregtisë.",
+          "Burimi i citatit është në verifikim.",
         reference: "Mexhmu' el-Fetava, 25/45",
         scope: "Zekati në mallrat e tregtisë.",
       },
       {
         scholar: "Imam Maliku",
-        arabic:
-          "ولا تكون الصدقة إلا في ثلاثة أشياء: في الحرث والعين والماشية.",
         translationSq:
-          "Në formulimin klasik, zekati lidhet me bujqësinë, pasurinë monetare dhe bagëtinë.",
+          "Burimi i citatit është në verifikim.",
         reference: "El-Muvatta, Libri i Zekatit",
         scope: "Kategoritë klasike të pasurisë së zekatueshme.",
       },
       {
         scholar: "Imam Shafiu",
-        arabic:
-          "ولا وقت فيما يعطى الفقير إلا ما يخرجه من حد الفقر إلى الغنى.",
         translationSq:
-          "Nuk ka kufi të ngurtë në ndihmën e të varfrit, përveç asaj që e nxjerr nga varfëria drejt mjaftueshmërisë.",
+          "Burimi i citatit është në verifikim.",
         reference: "El-Umm, 8/256",
         scope: "Synimi i ndihmës së përfituesit.",
       },
       {
         scholar: "Imam Ahmed ibn Hanbel",
-        arabic: "لا يجزيه ذلك",
         translationSq:
-          "Nuk mjafton që fshirja e një borxhi të llogaritet automatikisht si pagesë zekati.",
+          "Burimi i citatit është në verifikim.",
         reference: "El-Mugni, 2/487",
         scope: "Shënim juridik për fshirjen e borxhit ndaj një të varfri.",
       },
     ],
     caution:
-      "Për çështje të debatueshme si bizhuteria, borxhet, aksionet, kripto dhe pagesa për të afërmit, aplikacioni duhet të shfaqë metodën e zgjedhur dhe të sugjerojë këshillim fetar.",
+      "Për çështje të debatueshme si stolitë, borxhet, aksionet, kripto dhe pagesa për të afërmit, aplikacioni duhet të shfaqë metodën e zgjedhur dhe të sugjerojë këshillim fetar.",
   },
 ];

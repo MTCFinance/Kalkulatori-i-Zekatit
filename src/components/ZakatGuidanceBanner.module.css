@@ -1,0 +1,237 @@
+.banner {
+  position: relative;
+  min-height: 250px;
+  overflow: hidden;
+  border: 1px solid rgb(234 215 173 / 28%);
+  border-radius: 1.25rem;
+  background:
+    radial-gradient(circle at 88% -20%, rgb(189 139 56 / 24%), transparent 21rem),
+    linear-gradient(118deg, #10263a 0%, #075b4b 58%, #043f35 100%);
+  color: white;
+  box-shadow: 0 18px 42px rgb(16 38 58 / 16%);
+  isolation: isolate;
+}
+
+.ornament {
+  position: absolute;
+  top: -8rem;
+  right: -4rem;
+  z-index: -1;
+  width: 22rem;
+  height: 22rem;
+  border: 1px solid rgb(236 217 176 / 18%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 38px rgb(236 217 176 / 5%),
+    0 0 0 76px rgb(236 217 176 / 3%);
+}
+
+.dissolveContent {
+  display: grid;
+  min-height: 250px;
+  padding: 1.55rem 5rem 1.55rem 1.75rem;
+  align-items: center;
+  gap: 2rem;
+  animation: dissolve 10s ease-in-out both;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.badge {
+  padding: 0.32rem 0.55rem;
+  border: 1px solid rgb(236 217 176 / 28%);
+  border-radius: 999px;
+  background: rgb(236 217 176 / 12%);
+  color: #f1dfb9;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.reference {
+  color: #c6d9d3;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.verseText h2 {
+  margin-top: 0.8rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+}
+
+.verseText > p {
+  max-width: 460px;
+  margin-top: 0.7rem;
+  color: #d5e3df;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.actionLink {
+  display: inline-flex;
+  margin-top: 0.85rem;
+  align-items: center;
+  gap: 0.65rem;
+  color: #f1dfb9;
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.actionLink:hover {
+  color: white;
+}
+
+.arabicText {
+  max-height: 182px;
+  margin: 0;
+  padding: 1rem 1.25rem;
+  overflow: auto;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 8%);
+  color: white;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.85rem);
+  font-weight: 400;
+  line-height: 2;
+  scrollbar-color: rgb(236 217 176 / 40%) transparent;
+  text-align: right;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  display: flex;
+  z-index: 3;
+  align-items: center;
+  gap: 0.55rem;
+  transform: translateY(-50%);
+}
+
+.controls > button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 8%);
+  color: white;
+  cursor: pointer;
+  transition: 150ms ease;
+}
+
+.controls > button:hover {
+  border-color: rgb(236 217 176 / 55%);
+  background: rgb(236 217 176 / 16%);
+}
+
+.dots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.dots button {
+  width: 6px;
+  height: 6px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 32%);
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.dots .activeDot {
+  height: 18px;
+  background: #ecd9b0;
+}
+
+.progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #bd8b38, #ecd9b0);
+  transform-origin: left;
+  animation: progress 10s linear infinite;
+}
+
+@keyframes dissolve {
+  0% {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(5px);
+  }
+
+  7%,
+  90% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .banner,
+  .dissolveContent {
+    min-height: 360px;
+  }
+
+  .dissolveContent {
+    padding: 1.4rem 3.4rem 1.4rem 1.2rem;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .arabicText {
+    max-height: 165px;
+    font-size: 1.35rem;
+  }
+
+  .controls {
+    right: 0.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dissolveContent {
+    animation: none;
+  }
+
+  .progress {
+    animation: none;
+    transform: scaleX(1);
+  }
+}
