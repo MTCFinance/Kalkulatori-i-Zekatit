@@ -10,6 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
+import CalculatorUsageTracker from "../../components/CalculatorUsageTracker";
 import {
   type CalculatorLanguage,
   type TranslationVars,
@@ -3185,6 +3186,7 @@ const [jewelryRule, setJewelryRule] = useState("include");
 
   return (
     <main className={`${styles.shell} ${isSimpleMode ? styles.simpleMode : ""} min-h-screen px-4 py-6 text-slate-900 sm:px-6 md:py-10`}>
+      <CalculatorUsageTracker mode={isSimpleMode ? "simple" : "full"} />
       <div className={styles.container}>
         <header className={styles.topbar}>
           <Link href="/" className={styles.brand} aria-label={t("brand.homeAria")}>
